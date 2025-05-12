@@ -13,20 +13,14 @@ To build a simple blockchain and show how digital signatures protect transaction
 ## 📂 Project Structure
 
 easy-blockchain-with-digital-signatures/
+
 │
-
 ├── keygen.py # Generates RSA key pair (private/public)
-
 ├── sign_tx.py # Signs a transaction using private key
-
 ├── simple_blockchain.py # Implements and verifies a simple blockchain
-
 ├── signed_transaction.json # Stores the signed transaction
-
 ├── private_key.pem # Generated private RSA key
-
 ├── public_key.pem # Generated public RSA key
-
 └── README.md # Project documentation
 
 ---
