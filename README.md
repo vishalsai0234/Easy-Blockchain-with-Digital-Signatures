@@ -1,87 +1,131 @@
-# Easy Blockchain
+# 🧾 Easy Blockchain with Digital Signatures
 
-This project is a simple implementation of a blockchain in Python. It demonstrates the basic concepts of blockchain technology, including blocks, hashing, and chain integrity.
+This is a simple Python project that demonstrates how **blockchains** can be combined with **digital signatures** to ensure secure, tamper-proof transactions.
 
-## Features
+---
 
-- Creation of a blockchain with a genesis block
-- Adding new blocks to the chain
-- Calculation of SHA-256 hashes for each block
-- Validation of the blockchain's integrity
-- Simple demonstration of chain tampering detection
+## 🎯 Objective
 
-## Requirements
+To build a simple blockchain and show how digital signatures protect transaction authenticity and detect any tampering.
 
-- Python 3.6+
+---
 
-No additional libraries are required as this project only uses Python's standard libraries (`hashlib` and `time`).
+## 📂 Project Structure
 
-## Installation
+easy-blockchain-with-digital-signatures/
+│
+├── keygen.py # Generates RSA key pair (private/public)
+├── sign_tx.py # Signs a transaction using private key
+├── simple_blockchain.py # Implements and verifies a simple blockchain
+├── signed_transaction.json # Stores the signed transaction
+├── private_key.pem # Generated private RSA key
+├── public_key.pem # Generated public RSA key
+└── README.md # Project documentation
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/simonedimeglio/easy-blockchain.git
-   ```
-2. Navigate to the project directory:
-   ```
-   cd easy-blockchain
-   ```
+---
 
-## Usage
+## ⚙️ How It Works
 
-Run the script using Python:
+### 1. Key Generation
+Run `keygen.py` to generate a **2048-bit RSA** public-private key pair:
 
+```bash
+python keygen.py
 ```
+This creates:
+
+- private_key.pem: For signing transactions
+
+- public_key.pem: For verifying signatures
+
+### 2. Signing a Transaction
+Run `sign_tx.py` to create and sign a transaction:
+
+```bash
+python sign_tx.py
+```
+This produces a signed_transaction.json that looks like this:
+```bash
+{
+  "sender": "Alice",
+  "recipient": "Bob",
+  "amount": 50,
+  "signature": "..."
+}
+```
+
+### 3. Blockchain Validation
+Run `simple_blockchain.py` to:
+- Create a blockchain
+- Validate its integrity
+- Simulate tampering and show how it's detected
+
+```bash
 python simple_blockchain.py
 ```
 
-This will create a blockchain, add some sample blocks, print the blockchain, and demonstrate the validation process.
+Example output:
+```bash
+Is blockchain valid? True
+Block 1 has an invalid hash
+Is blockchain valid after tampering? False
 
-## Understanding the Code
+```
 
-### Block Class
+---
 
-The `Block` class represents a single block in the blockchain. Each block contains:
+## 📌 Key Concepts
+- Blockchain: A chain of blocks, each containing transaction data and a hash that links to the previous block.
 
-- `index`: A unique identifier for the block's position in the chain
-- `previous_hash`: The hash of the previous block, creating the chain link
-- `data`: The data stored in the block (e.g., transaction details)
-- `timestamp`: The time when the block was created
-- `hash`: A SHA-256 hash of the block's contents
+- Digital Signature: Ensures that a transaction has not been altered and was created by a verified sender.
 
-### Blockchain Class
+- Tampering Detection: Any change in a signed block or hash breaks the chain's validity.
 
-The `Blockchain` class manages the entire chain of blocks. It includes methods to:
+---
 
-- Create the genesis block (the first block in the chain)
-- Add new blocks to the chain
-- Validate the integrity of the entire chain
+## ✅ Requirements
+- Python 3.6+
 
-### Key Concepts Demonstrated
+- cryptography
+Install dependencies:
+```bash
+pip install cryptography
+```
 
-1. **Hashing**: Each block's hash is created from its contents, ensuring data integrity.
-2. **Chaining**: Each block references the previous block's hash, creating a tamper-evident chain.
-3. **Validation**: The `is_chain_valid()` method checks the integrity of the entire blockchain.
+---
 
-## Extending the Project
+## 🔐 Core Concepts
 
-This simple implementation can be extended in several ways:
+| Concept            | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Blockchain         | Chain of blocks that store data with hash pointers    |
+| Digital Signatures | Prove sender identity & protect against tampering     |
+| SHA256 Hashing     | Used to detect any changes in block data              |
+| Public Key Crypto  | Only the holder of the private key can sign a message |
 
-1. Implement a proof-of-work system
-2. Add digital signatures for transactions
-3. Create a decentralized network of nodes
-4. Implement a consensus mechanism
+---
 
-## License
+## 🎓 Educational Use
+This project is perfect for learning about:
 
-This project is open source and available under the [MIT License](LICENSE).
+- Blockchain fundamentals
 
-## Contributing
+- Public-key cryptography
 
-Contributions, issues, and feature requests are welcome!
+- Data integrity and signature verification
 
-## Author
+---
 
-Simone Di Meglio
+## 📸 Sample Output Screenshot:
+![Screenshot of the output](images/Screenshot 01.png)
+![Screenshot of the output](images/Screenshot 02.png)
 
-- GitHub: [@simonedimeglio](https://github.com/simonedimeglio)
+---
+
+## 👤 Project Members
+Goli Poojitha (220150003), Takkellapati Nagendra (220150025), Varakala Rajasree (220150028), Vishal (220150029)
+B.Tech in Data Science and Artificial Intelligence
+Indian Institute of Technology Guwahati
+Course: DA352 - Privacy and Security in Computing
+
+---
