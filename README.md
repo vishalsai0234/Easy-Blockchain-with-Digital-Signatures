@@ -124,9 +124,7 @@ This project is perfect for learning about:
 
 ## 📸 Sample Output Screenshot:
 
-![Screenshot of the output]([images/Screenshot 01.png](https://github.com/vishalsai0234/Easy-Blockchain-with-Digital-Signatures/blob/main/images/Screenshot%2001.png))
-
-![Screenshot of the output]([images/Screenshot 02.png](https://github.com/vishalsai0234/Easy-Blockchain-with-Digital-Signatures/blob/main/images/Screenshot%2002.png))
+Open `images` folder -> https://github.com/vishalsai0234/Easy-Blockchain-with-Digital-Signatures/tree/main/images
 
 ---
 
