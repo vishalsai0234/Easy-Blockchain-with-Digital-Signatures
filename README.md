@@ -135,6 +135,6 @@ B.Tech in Data Science and Artificial Intelligence
 
 Indian Institute of Technology Guwahati
 
-Course: DA352 - Privacy and Security in Computing
+Course: DA352 - Privacy and Information Security
 
 ---
